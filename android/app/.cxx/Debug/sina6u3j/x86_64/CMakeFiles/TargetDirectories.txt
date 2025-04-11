@@ -1,0 +1,2 @@
+C:/Users/programacion23/flutter_apps/autenticacion/client/android/app/.cxx/Debug/sina6u3j/x86_64/CMakeFiles/edit_cache.dir
+C:/Users/programacion23/flutter_apps/autenticacion/client/android/app/.cxx/Debug/sina6u3j/x86_64/CMakeFiles/rebuild_cache.dir
