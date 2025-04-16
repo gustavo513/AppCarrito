@@ -1,11 +1,13 @@
 import 'package:dio/dio.dart' as dio;
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+
 import 'package:client/src/models/usuario_model.dart';
 
 class UsuarioProvider{
 
   final _dio = dio.Dio();
 
-  final String url = 'http://192.168.0.31:5000/usuario';
+  final String url = 'http://${dotenv.env['IP']}:5000/usuario';
 
   Future<UsuarioModel> obtenerUsuario(int id) async{
     final dynamic datos = await _dio.get(

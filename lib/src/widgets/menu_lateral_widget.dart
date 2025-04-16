@@ -1,5 +1,7 @@
-import 'package:client/src/pages/home_page.dart';
 import 'package:flutter/material.dart';
+
+import 'package:client/src/pages/home_page.dart';
+import 'package:client/src/pages/perfil_page.dart';
 
 class MenuLateralWidget extends StatelessWidget{
   
@@ -16,7 +18,8 @@ class MenuLateralWidget extends StatelessWidget{
             Divider(),
             ListTile(
               leading: Icon(Icons.person),
-              title: Text('Perfil')
+              title: Text('Perfil'),
+              onTap: () => Navigator.of(context).popAndPushNamed('/perfil')
             ),
             Divider(),
             ListTile(

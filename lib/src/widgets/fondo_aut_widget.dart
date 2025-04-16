@@ -4,6 +4,7 @@ class FondoAutWidget extends StatelessWidget{
 
   //BuildContext? context;
   double? altura;
+  bool? activarLogo;
   String? rutaImagen;
   String? encabezado;
   List<Widget>? campos;
@@ -12,11 +13,11 @@ class FondoAutWidget extends StatelessWidget{
   Function? accionBoton;
   Widget? piePagina;
 
-
   FondoAutWidget({
-    //required BuildContext context, 
-    double? altura, 
+    //required BuildContext context,
+    required double? altura, 
     String? rutaImagen, 
+    bool? activarLogo,
     required String encabezado, 
     required List<Widget> campos, 
     double? separacionCampos,
@@ -26,6 +27,7 @@ class FondoAutWidget extends StatelessWidget{
       //this.context = context;
       this.altura = altura;
       this.rutaImagen = rutaImagen;
+      this.activarLogo = activarLogo;
       this.encabezado = encabezado;
       this.campos = campos;
       this.separacionCampos = separacionCampos;
@@ -61,7 +63,7 @@ class FondoAutWidget extends StatelessWidget{
           ),
           child: Column(
             children: [
-              _crearLogo(context),
+              activarLogo == true? _crearLogo(context) : Text(''),
               _crearEncabezado(encabezado!, context),
               _crearCampos(context), 
               _crearBoton(context),

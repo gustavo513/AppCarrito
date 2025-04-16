@@ -1,13 +1,14 @@
-import 'package:client/src/models/auth_model.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:dio/dio.dart' as dio;
 
+import 'package:client/src/models/auth_model.dart';
 import 'package:client/src/models/usuario_model.dart';
 
 class AuthProvider{
 
     final _dio = dio.Dio();
 
-    final _urlBase = 'http://192.168.0.31:5000/autenticacion';
+    final _urlBase = 'http://${dotenv.env['IP']}:5000/autenticacion';
   
     Future<Map<String, dynamic>> registro(UsuarioModel usuario) async{
 

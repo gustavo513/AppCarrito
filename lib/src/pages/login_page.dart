@@ -27,6 +27,7 @@ class LoginPage extends StatelessWidget{
                 //context: context, 
                 altura: _altura, 
                 rutaImagen: _rutaImagen, 
+                activarLogo: true,
                 encabezado: _encabezado, 
                 campos: _crearCampos(), 
                 separacionCampos: 20.0,

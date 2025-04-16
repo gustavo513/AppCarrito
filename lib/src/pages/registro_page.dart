@@ -34,6 +34,7 @@ class RegistroPage extends StatelessWidget{
         body: FondoAutWidget( 
                 altura            :    _altura,
                 rutaImagen        :    _rutaImagen,
+                activarLogo       :    true,
                 encabezado        :     _encabezado,
                 campos            :     _crearCampos(), 
                 separacionCampos  :     20.0, 
@@ -45,6 +46,8 @@ class RegistroPage extends StatelessWidget{
   }
 
   List<Widget> _crearCampos(){
+    String mensaje = '';
+
     return [
               TextField(
                 controller: nombreController,
@@ -101,10 +104,19 @@ class RegistroPage extends StatelessWidget{
                 controller: passwordSecondController,
                 decoration: InputDecoration(
                   label: Text('Repita la contraseña'),
+                  counterText: mensaje,
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10.0)
                   ),
                 ),
+                onChanged: (String passwordSegundo){
+                  if(passwordSegundo == passwordController.text){
+                    mensaje = 'Las contraseñas coinciden';
+                  }
+                  else{
+                    mensaje = 'Las contraseñas no coinciden';
+                  }
+                }
               ),
         ];
   }

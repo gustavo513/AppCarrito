@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 import 'package:client/src/models/detalle_model.dart';
 
@@ -6,7 +7,7 @@ class DetallesProvider{
 
   final Dio _dio = new Dio();
 
-  final _urlBase = 'http://192.168.0.31:5000/detalles';
+  final _urlBase = 'http://${dotenv.env['IP']}:5000/detalles';
 
   Future<List<DetalleModel>> obtenerDetalles(int id_carrito) async{
 

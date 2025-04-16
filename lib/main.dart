@@ -15,7 +15,7 @@ Future<void> _notificacionesSegundoPlano(RemoteMessage mensaje) async {
   );
 }
 
-void main() async {
+Future main() async {
   await dotenv.load(fileName: ".env");
 
   WidgetsFlutterBinding.ensureInitialized();

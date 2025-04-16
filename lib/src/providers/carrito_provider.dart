@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:dio/dio.dart';
 import 'package:convert/convert.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 import 'package:client/src/pages/home_page.dart';
 import 'package:client/src/models/carrito_model.dart';
@@ -10,7 +11,7 @@ class CarritoProvider{
 
   final _dio = Dio();
 
-  final String _urlBase = 'http://192.168.0.31:5000/carrito';
+  final String _urlBase = 'http://${dotenv.env['IP']}:5000/carrito';
 
   Future<int> guardarCarrito(Carrito carrito) async{
 
